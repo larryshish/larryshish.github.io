@@ -2,28 +2,32 @@
 layout: post
 title: 你应该使用微服务吗
 ---
-微服务是一种架构风格，在软件开发中存在很多架构风格，例如事件驱动，restful，分布式等等，很多时候一种软件里面可能存在在不同的架构风格。
+微服务是一种新的架构风格，在软件开发中存在很多架构风格，例如通常见于Linux、Unix上的数据流架构风格，具有Web页面的事件驱动架构风格，大型网络，电商常用的分布式架构风格等等，很多时候同一应用软件里面可能存在不同的架构风格。
 
 在一种架构风格的指导下，我们可以设计出特定的架构，那么我们应该使用什么样的架构？这应该和特定应用类型以及特定的业务场景相对应的。
 
-本文想讨论微服务的概念，给我们带来的益处，我们应该在什么时候应用它，以及如果应用微服务的话，应该如何怎么来做，带来的收益和坏处又是什么。
+本文想探讨一下微服务的概念，其对软件开发带来的益处，应该在什么场景下使用微服务，以及如果应用微服务的话，应该如何怎么来做。
 
-首先我们来看一些概念：
+首先我们来看一些和微服务相关的概念：
 ## 概念
 ### 单体（Monolith）
-单体应用（Monolith Application）（也有人翻译成**整体**，其实我觉得**整体**更贴切一些，可是**整体**这个词太普通，在上下文中使用有时间大家不会想到其指代monolith） 是指将应用程序所有的功能都放在一起，形成一个单元。在java中通常是EAR包，WAR包，在Python中通常是一个目录架构。
+单体应用（Monolith Application）（也有人翻译成**整体应用**，其实我觉得**整体应用**更贴切一些，可是**整体**这个词太普通，在上下文中使用有时间大家不会想到其指代monolith） 是指将应用程序所有的功能都放在一起，形成一个单元。软件设计，开发，部署都是以这个单元为单位的。在java中通常是EAR包，WAR包，Jar包等，在Python中通常是一个整体的目录结构。
 
-单体应用是大家非常熟知软件开发模式，Java中与之对应通常有三层架构模式：表示层，应用层，数据访问层。
+单体应用是大家非常熟知软件开发模式，J2EE中与之对应通常有三层架构模式：表示层，应用层，数据访问层。
 
-当部署某单体应用的时候，我们必须要构建和部署整个应用，如果是比较大的应用的话，这会很复杂、有风险、耗时，并且需要与众多的开发人员协调从而导致很长的测试周期。
+当部署某单体应用的时候，我们必须要构建和部署整个应用，如果是比较大的应用的话，这会很复杂、有风险、耗时，并且需要与众多的开发人员协调从而导致很长的开发，测试周期，有的时候因为应用很大，编译，重启要花费很长的时间。我还记得之前我做的一个保险应用重启一次大概需要十几分钟。
+
+下面是我从网上找的一篇漫画，虽然是漫画，当也是现实。
+![](http://jbcdn2.b0.upaiyun.com/2012/09/code-is-Compiling-Chinese.jpg)
+
 
 ### 微服务（Microservice）
-微服务的与单体相反，它把应用拆分成一个个的独立的，具有不同业务功能独立单元，这些服务可以独立开发，部署和运行。
+微服务的与单体相反，在微服务架构中，应用会被拆分成一个个的独立的，具有不同业务功能独立单元，这些服务可以独立开发，部署和运行。
 
 使用微服务的应用就可以对每个服务进行独立部署和扩展；一个服务可以被部署为多个实例，而不同的服务也可以托管在同一台服务器上。
 
 ### System of Record
-Systems of Records没有看到过正式的翻译，在公司内部和在和客户沟通的时候，我们一般都是直接使用System of Record这个词。它是指那些传统的企业应用系统，一般主要目的是记录业务信息，保证这些信息的完整性，正确性以及一致性。下面这些是System of Record系统的一些例子：
+Systems of Records没有看到过正式的翻译，无论是公司内部或者在和客户沟通的时候，我们一般都是直接使用System of Record这个词。它是指那些传统的企业应用系统，一般主要目的是记录业务信息，保证这些信息的完整性，正确性以及一致性。下面这些是System of Record系统的一些例子：
 * 客户关系管理系统 (CRM)
 * 人力资源管理系统 (HRM)
 * ERP系统 (ERP)
@@ -32,16 +36,12 @@ Systems of Records没有看到过正式的翻译，在公司内部和在和客�
 
 ### System of Engagement
 Systems of engagement 一般指那些去中心化的，鼓励用户互动的应用系统。下面是Systems of engagements的一些例子：
-
 * email
 * Wiki
 * 社交网络（tweet，微信，Facebook）
 * 机器学习，人工智能系统（IBM Waston）
 
-
-System of Records和System of Enagement分类的提出是Geoffrey Moore，他有一篇有名的文章[System of Engagement and Future of Enterprise IT](http://www.aiim.org/~/media/Files/AIIM%20White%20Papers/Systems-of-Engagement-Future-of-Enterprise-IT.ashx)，在这篇文章中指出，System of Enagement是以后Enterprise非常重要的一类应用，因为通过Engagement（包括和客户以及内部员工），可以创造高效的生产率。
-
-
+System of Records和System of Enagement分类的提出是Geoffrey Moore，他有一篇有名的文章[System of Engagement and Future of Enterprise IT](http://www.aiim.org/~/media/Files/AIIM%20White%20Papers/Systems-of-Engagement-Future-of-Enterprise-IT.ashx)，在这篇文章中指出，System of Enagement是以后Enterprise非常重要的一类应用，因为通过Engagement（包括和客户以及内部员工），通过互动和协作，可以创造高效的生产率。
 
 ##为什么我们需要微服务
 * 快速交付的要求
