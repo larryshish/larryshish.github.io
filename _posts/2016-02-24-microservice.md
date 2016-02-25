@@ -76,7 +76,7 @@ System of Records和System of Enagement分类的提出是Geoffrey Moore，他有
 
 ## 构建微服务面临的挑战
 ###架构复杂性
-一般来说，一个基于微服务架构构建的系统通常要包含数十到上百的服务，Netflex是微服务的早先采用者，他现在有大约600个服务。这么多服务要想很好的一起配合运行的话，在架构上有很多店需要考虑到，例如：
+一般来说，一个基于微服务架构构建的系统通常要包含数十到上百的服务，Netflix是微服务的早先采用者，他现在有大约600个服务。这么多服务要想很好的一起配合运行的话，在架构上有很多店需要考虑到，例如：
 
 * 服务的注册和发现
 * 服务的认证和授权
@@ -110,6 +110,9 @@ System of Records和System of Enagement分类的提出是Geoffrey Moore，他有
 ### 测试
 测试一个基于微服务架构的应用也是很复杂的任务。因为服务之间有很多依赖，如何在测试中隔离依赖，这也是一个很大的挑战。
 
+##什么样的应用应该使用微服务架构
+从上面的讨论我们可以看出，微服务架构有很多天生的复杂性在里面，如果你的应用是一般的传统应用，属于System of Record的类型的话，**应该采用单体架构**。但是如果你的应用属于System of Enagement类型的话，传统的三层架构是无法满足这类型的应用的，你应该采用Ted Schadler在他的[blog](http://blogs.forrester.com/ted_schadler/13-11-20-mobile_needs_a_four_tier_engagement_platform)里面提到的如下图所示的四层架构，并且在服务层使用微服务的架构。
+![]（http://blogs.forrester.com/f/b/users/TSCHADLER/engagement_platform_2.png）
 
 ## 构建微服务的路径
 
@@ -125,7 +128,7 @@ System of Records和System of Enagement分类的提出是Geoffrey Moore，他有
 ## 一些开发框架
 * [KumuluzEE](https://ee.kumuluz.com/) 这个框架获得了
 **2015 Java Duke's Choice Award Winner**
-* Spring Cloud 对Netflex的微服务框架做了一些封装
+* Spring Cloud 对Netflix的微服务框架做了一些封装
 * 。。。还有很多
 
 最后，附上Martin Flower的警告：
