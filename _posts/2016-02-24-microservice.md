@@ -112,7 +112,7 @@ System of Records和System of Enagement分类的提出是Geoffrey Moore，他有
 
 ##什么样的应用应该使用微服务架构
 从上面的讨论我们可以看出，微服务架构有很多天生的复杂性在里面，如果你的应用是一般的传统应用，属于System of Record的类型的话，**应该采用单体架构**。但是如果你的应用属于System of Enagement类型的话，传统的三层架构是无法满足这类型的应用的，你应该采用Ted Schadler在他的[blog](http://blogs.forrester.com/ted_schadler/13-11-20-mobile_needs_a_four_tier_engagement_platform)里面提到的如下图所示的四层架构，并且在服务层使用微服务的架构。
-![]（http://blogs.forrester.com/f/b/users/TSCHADLER/engagement_platform_2.png）
+![](http://blogs.forrester.com/f/b/users/TSCHADLER/engagement_platform_2.png）
 
 ## 构建微服务的路径
 
