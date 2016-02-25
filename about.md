@@ -14,5 +14,10 @@ Openstack设计与实现
 成为技术领导者
 
 ### 联系方式
+Mail
 
 [mingchun.shi@gmail.com](mailto:mingchun.shi@gmail.com)
+
+微信
+
+![](/images/smc.jpg)
