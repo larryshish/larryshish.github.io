@@ -45,6 +45,9 @@ Systems of engagement 一般指那些去中心化的，鼓励用户互动的应�
 
 System of Records和System of Enagement分类的提出是Geoffrey Moore，他有一篇有名的文章[System of Engagement and Future of Enterprise IT](http://www.aiim.org/~/media/Files/AIIM%20White%20Papers/Systems-of-Engagement-Future-of-Enterprise-IT.ashx)，在这篇文章中指出，System of Enagement是以后Enterprise非常重要的一类应用，因为通过Engagement（包括和客户以及内部员工），通过互动和协作，可以创造高效的生产率。
 
+System of Engagement应用有两个特点：需求变化快和用户增长迅速。它的这两个特定决定了传统的应用架构无法满足其快速开发，迭代，具有较强的可伸缩性的要求的特定。
+
+
 ##为什么我们需要微服务
 
 ### 快速交付的要求         
