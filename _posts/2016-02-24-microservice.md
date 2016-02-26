@@ -136,6 +136,6 @@ System of Engagement应用有两个特点：需求变化快和用户增长迅速
 * Spring Cloud 对Netflix的微服务框架做了一些封装
 * 。。。还有很多
 
-最后，附上Martin Flower的警告：
+最后，附上Martin Flower的警告，你在打算采用微服务之前绝对应该首先读一下InfoQ上的这篇文章：[微服务的额外代价](http://www.infoq.com/cn/news/2015/06/microservices-premium)：
 
 > 除非你的系统太复杂，作为单体应用会很难管理，否则不要考虑微服务。绝大多数软件系统都应该构建为单体应用。要注重在单体应用中实现良好的模块化，但不要试图将其拆分成单独的服务。
